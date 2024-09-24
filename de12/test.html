@@ -2,22 +2,51 @@
 <html lang="jp">
 <head>
     <!-- ⑥↓タイトルを変えてみよう -->
-    <title>〇〇のテストページ</title>
+    <title>moldのテストページ</title>
     <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="./css/style.css">
     <!-- h1.htmlからある行をコピペしてくればOK -->
 </head>
 <body>
-    <h1>見出し</h1>
+    <h1>見出し１</h1>
     <!-- 塊ごとにdivタグで区切るようにしましょう。 -->
     <div>
+        <u>HTMLの主な構成について</u>
+            <ul>
+            <li>タグについて</li>
+            HTMLにおけるタグとは他プログラミング言語で言うところの命令文、メソッド・クラスにあてはまるものである。
+            タグの使用により<u>アンダーラインの追加</u>、改行といった一連の動作を可能とする
+            </ul>
+                
+    </div>
+    <div>
          <!-- ①↓に文字を書いてみよう -->
-
+        
          <!-- ②↓に画像（imagesフォルダにあるtest.png）を挿入してみよう -->
-
+        <img src="./images/image1.png" width="5%"><br>
+        <img src="../images/0_XBlogo.png" width="5%">
          <!-- ③↓に箇条書きをしてみよう -->
+        <ol>
+            <li>バナナ</li>
+            <li>ブドウ</li>
+        </ol>
 
+        <ul>
+            <li>しらす</li>
+            <li>ごはん</li>
+        </ul>
          <!-- ④↓に外部リンクを作ってみよう -->
 
+    </div>
+    <div>
+    ↓XBPホームページ<br>
+    <a href="../index.html">リンク</a><br>
+    ↓デザイン演習１・２ホームページ<br>
+    <a href="./index.html">リンク</a><br>
+    ↓yahooのリンク<br>
+    <a href="https://www.yahoo.co.jp/" target="_blank">Yahoo</a><br>
+    ↓神奈川大学みなとみらい紹介youtube
+    <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/0yYkiiRFiJs?si=nlpQIavBQ-Rw0eGv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     </div>
 
 </body>
