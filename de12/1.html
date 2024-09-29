@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>HTMLとGIT</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="./css/teststyle.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<body>
+    
+    <h1 class="daimei" style="color:white">第一回：HTMLとGIT</h1>
+    <article>
+        <div class="main">
+            <h2 class="tatenizyusen" id="HTML">１．HTML</h2>
+            <div class="honbun">
+                <ul>
+                    <li style="font-size: 20px;">概要</li>
+                    HTMLはHyper Text Markup Language　の略であり、主にウェブサイト制作に使われるプログラミング言語です。<br>
+                    画像の貼り付けや動画を埋め込み、記事全体のデザインといった様々なことが行えます。<br>
+                    <br>
+                    <li style="font-size: 20px;">タグについて</li>
+                    HTMLではタグと呼ばれる印によってコンピュータに命令を行っています。<br>
+                    タグの種類や、そのタグにつけられた属性によって特定の動作や性質を命令文に持たせてウェブページを作っています。<br>
+                    　　代表例：タグ→＜br＞:改行　＜div＞:塊の区分　＜body＞:核となる塊の区分　＜h1＞:見出し用の区分<br>
+                    　　　　　　属性→class:cssにあるプログラムを引っぱり出せる　　style:色の変更や字の大きさを変えれたりできる<br>
+                    <img src="./images/tag-and-character.png" width="40%"><br>
+                    タグ、属性ともにかなりの数があるため主要なタグは多少覚えておくことが肝要です。
+                    
+                </ul>
+
+            </div>
+            <h3 class="tatenizyusen" id="GIT">２．GIT</h2>
+            <div class="honbun">
+                <ul>
+                    <li style="font-size: 20px;">概要</li>
+                    GITはソースコードや変更履歴を管理できるバージョン管理システムです。<br>
+                    ファイルのバージョンを管理するため、簡単に前のバージョンに戻したりできます。<br>
+                    <br>
+                    <p style="color:gray">※ソースコード：プログラミング言語を用いて記述したプログラムの設計図</p>
+                    <li style="font-size: 20px;">生まれた背景</li>
+                    背景としては、データを共同で編集する現場では度重なる変更によって最新のものがどれかわからなくなったり、<br>
+                    消してはいけないものを誤って消してしまったりといった管理のしずらさによる能率の悪さがありました。<br>
+                    それを改善するため、バージョンや変更履歴を残し保管しておくことでわかりずらさを減らすようにしてあるのです。<br>
+                    <br>
+
+                    
+                    
+                </ul>
+            </div>
+            <h4 class="tatenizyusen" id="CSS">３．CSS</h2>
+            <div class="honbun">
+                <ul>
+                    <li style="font-size: 20px;">概要</li>
+                    CSSとはウェブページのレイアウト、つまり見た目を変えるためのものです。<br>
+                    HTMLとは分離して存在し、見栄え用のプログラムを組みます。<br>
+                    <br>
+                    <li style="font-size: 20px;">詳細</li>
+                    HTMLでも見た目の部分、例えば背景の色の変更といったものや枠の追加ができます。<br>
+                    しかし、HTMLのもともとの役割は文章に関することであってデザインがメインではありません。<br>
+                    そのためHTML内でデザインに関するプログラムをすると不備が生じたり、見るデバイスによって見え方が変わったり<br>
+                    してしまい、それに加えてソースコードも非常に見づらくなる欠点がありました。<br>
+                    <img src="./images/item.png" width="40%"><img src="./images/item2.png" width="40%"><br>
+
+                    そこでHTMLからデザインに関するものを分離して、<br>
+                    デザインに関することはCSS、文章に関することはHTMLと役割を分担させ、<br>
+                    エラーの防止やコードの見やすさの改善が行われたわけです。
+
+                    
+                    <br>
+                    <br>
+                </ul>
+            </div>
+            <div class="maruumewaku" id="sansyou">
+                参考にさせていただいた外部ウェブページURL<br>
+                HTMLについて→<a href="https://schoo.jp/matome/article/1635">HTMLとは？初心者向けに基礎知識を分かりやすく解説</a><br>
+                GITについて→<a href="https://www.kagoya.jp/howto/it-glossary/develop/git/">【入門】Gitとは？できることや使い方、GitHubとの違いをわかりやすく解説</a><br>
+                CSSについて→<a href="https://school.dhw.co.jp/course/web/contents/w_CSS.html">CSSの基本的な書き方・CSSとは？</a>
+            </div>
+        </div>
+        <nav class="mokuzi">
+            <br>
+            目次<br>
+            <a href="#HTML">HTML</a><br>
+            <a href="#GIT">GIT</a><br>
+            <a href="#CSS">CSS</a><br>
+            <a href="#sansyou">外部参考リンク集</a><br>
+            
+        </nav>
+    </article>
+</body>
+</html>
