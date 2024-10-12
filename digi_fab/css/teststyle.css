@@ -1,0 +1,93 @@
+article{
+    display: flex;
+    margin-right:150px;
+    margin-left:150px;
+    margin-bottom:100px;
+    margin-top:80px;
+}
+
+.main{
+    margin-bottom: 140px;
+    
+    /*左本文用のメイン欄*/
+}
+
+.mokuzi {
+    background: #daedd9;
+    position: sticky;
+    width:500px;
+    height:500px;
+    top:0;
+    margin-left:30px;
+    margin-top:20px;
+
+    font-size: 16px;
+    line-height: 24px;
+    text-align:center;
+    /*右目次用のサブ欄*/
+}
+
+body{
+    background-image:url("../images/4.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.daimei{
+    padding: 50px;
+    top:0px;
+    background-color: #233e22;
+
+    text-align: center;
+    font-size:5em;
+    /*題名用枠*/
+}
+
+.honbun{
+    margin:20px;
+    margin-top:40px;
+    margin-left:10px;
+    line-height: 40px;
+}
+
+.tatenizyusen{
+    padding: 10px;
+    width:28em;
+    margin-bottom: 10px;
+    border-left: 15px double  #233e22;
+    background-color: #daedd9;
+
+    font-size: 2em;
+    /*左縦二重線の入った強調枠*/
+
+}
+
+
+.waku{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #233e22;
+    background-color: #fff;
+    /*枠*/
+}
+
+.sikakuumewaku{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #2c3f31;
+    background-color: #daedd9;
+    /*色埋め枠*/
+
+}
+
+.maruumewaku{
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 50em;
+    border: 1px solid #2c3f31;
+    border-radius: 10px;
+    background-color:  #daedd9;
+    /*色埋め角丸枠*/
+
+}
