@@ -19,7 +19,7 @@ article{
     height:500px;
     top:0;
     margin-left:30px;
-    margin-top:20px;
+    margin-top:26px;
 
     font-size: 16px;
     line-height: 24px;
@@ -90,4 +90,11 @@ body{
     background-color:  #daedd9;
     /*色埋め角丸枠*/
 
+}
+
+.komidasi{
+    font-size:24px;
+}
+.taitoru{
+    font-size:20px;
 }

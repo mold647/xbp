@@ -11,13 +11,124 @@
     <h1 class="daimei" style="color:white">進化したピンセット</h1>
     <article>
         <div class="main">
-            <h2 class="tatenizyusen" id="HTML">１．打倒ささくれ</h2>
+            <h2 class="tatenizyusen" id="1">１．概要</h2>
             <div class="honbun">
-                
+                <ul>
+                    <li class="komidasi" id="title">実際の作品とそのタイトル</li>
+                    <img src="./images/sasakurepinset.jpg" width="40%"><br>
+                    <p class="taitoru">タイトル：ささくれピンセット</p>
+                    <p id="explain">作品の説明：ささくれを抜くためだけのピンセットです。<br>
+                    先を平らにすることで、ささくれを抜く際に通常のピンセットと比べて肌に刺さりにくいようにしています。<br>
+                    またはさむ部分に近いところに指を添えて力を入れる構造なので力加減がしやすく、肉を挟むことが少なくなっています<br><br>
+
+                    この作品を作った理由：子供のころにささくれを抜くためにピンセットを使ったときに肉を挟んでしまったり、<br>
+                    扱いずらかったこともあり非常にストレスだった。<br>
+                    そのことをポストイットで「逆転」を考えた時に思い出したため、痛くない・扱いやすいピンセットが欲しいと感じたため。
+                    </p>
+
+                </ul>
             </div>
-            <h3 class="tatenizyusen" id="">２．製作過程
+            <h3 class="tatenizyusen" id="2">２．製作過程</h3>
+            <div class="honbun">
+                <ol>
+                    <li class="komidasi" id="draw">スケッチ</li>
+                    まず頭の中でできているものを軽く書いておく<br>
+                    <img src="./images/sasakurenukipinset-draw.jpg" width="40%"><br>
+                    <p><font color="#A9A9A9">本当に軽ーくかいた</font><br></p>
+                    <li class="komidasi">3Dデータの製作</li>
+                    見た目を全体的に丸くして痛くないイメージにする<br>
+                    その際に角を丸くするためにFusionのソリッドにあるフィレットを使う<br>
+                    <img src="./images/sasakurenukipinset3D.png" width="60%"><br>
+                    <li class="komidasi">Curaへの変換とデータの作成</li>
+                    Curaを使って3Dプリント用のファイルに変更する<br>
+                    その際に作られていく工程がわかるため、そこでどのように作られていくのかプレビューで確認できる<br>
+                    <img src="./images/cura-preview.png" width="60%"><br>
+                    モノによって先端が細すぎる場合は元データより短くなったりするがそれも確認することができる<br>
+
+                </ol>
+
+            </div>
+            <h4 class="tatenizyusen" id="3">その他の製作物</h4>
+            <div class="honbun">
+                <ol>
+                    <li class="komidasi">幅広ピンセット</li>
+                    <img src="./images/widepinset.jpg" width="40%"><br>
+                    フローリングの隙間や、キーボードの隙間といったところに入ったごみを<br>
+                    すくい上げるようなイメージで作ったピンセット<br>
+                    ただピンセットの厚さが想定よりうすくしなければならないことが判明し、<br>
+                    これ以上薄くするとピンセットの機能を失いかねないうえに、<br>
+                    3Dプリントができるかどうかも怪しかったので製作を断念。<br>
+                    何なら普通のピンセットでその役割を果たせることも分かった<br>
+                    <br>
+                    <li class="komidasi">持ち運びピンセット</li>
+                    <img src="./images/takeoutpinset.jpg" width="40%"><br>
+                    ピンセットも持ち運びしやすくするために上に紐を通せるようにしたピンセット<br>
+                    ストラップ気分で持ち運ぶことを想定していたが、設計時のミスで造形を失敗した<br>
+                    この後持ち運びピンセットを作り直そうとしたときに、ささくれピンセットと合体させる案が思いついた<br>
+                    <br>
+                    <li class="komidasi">持ち運びささくれピンセット</li>
+                    <img src="./images/sasakurepinsetV2.jpg" width=40%><br>
+                    前述のとおり持ち運びピンセットとささくれピンセットを合体させたピンセット<br>
+                    <br>
+                    <li class="komidasi">キーボード角度付け</li>
+                    <img src="./images/keyboard.jpg" width="40%"><br>
+                    もはやピンセットですらないが、3Dプリンターで作ったものなので一応記載。<br>
+                    自宅にあるキーボードの角度をつけるための器具が壊れていたので、角度を計算した後3Dプリンターで作成した。<br>
 
 
+                </ol>
+            </div>
+            <h5 class="tatenizyusen" id="4">製作物を作っている最中に気づいたこと</h5>
+            <div>
+                製作物を作っている際に気づいた3Dプリンターの特徴を挙げていく
+                <ul>
+                    <li>底面が広くなる</li>
+                    製作時、台に接地している面が広くなりやすい。<br>
+                    <img src="./images/teimensetumei.jpg" width="40%"><br><br>
+                    <li>浮いている部分はおかしくなる</li>
+                    これは授業内でも少し説明をされたが、ほんの少し浮くだけでもおかしくなってしまうため注意が必要
+                    <img src="./images/up-evidence.png" width="60%"><br>
+                    持ち運びピンセットの設計時のスクリーンショットだが先を少し浮かせている。<br>
+                    おそらくこれが原因で造形を失敗した模様。<br><br>
+                    <img src="./images/keyboard-setumei.jpg" width="40%"><br>
+                    キーボードの角度付けでも少し浮いている部分がおかしくなっている
+                    
+
+
+                </ul>
+            </div>
+            <h6 class="tatenizyusen" id="5">製作物のファイル</h6>
+            <div>
+                <ul>
+                    <li>ささくれピンセット</li>
+                    <a href="./files/sasakurenukipinset.stl">stlファイル</a>
+                    <li>持ち運びピンセット</li>
+                    <a href="./files/takeoutpinset v1.stl">stlファイル</a>
+                    <li>持ち運びささくれピンセット</li>
+                    <a href="./files/2sasakurenukipinset-takeout v2.stl">stlファイル</a>
+                    <li>キーボード角度付け</li>
+                    <a href="./files/widepinset.stl">stlファイル</a>
+
+                </ul>
+            </div>
         </div>
+        <nav class="mokuzi">
+            <br>
+            目次<br>
+            <a href="#1">概要</a><br>
+            <a href="#2">製作過程</a><br>
+            <a href="#3">その他の製作物</a><br>
+            <a href="#4">製作時気づき</a><br>
+            <a href="#5">製作物ファイル</a><br><br>
+
+            課題確認用目次
+            <a href="#title">タイトルと写真</a><br>
+            <a href="#draw">スケッチ<br>+ソフトの機能</a><br>
+            <a href="#5">stlファイル</a><br>
+            <a href="#explain">説明と製作理由</a><br>
+            <a href="#4">気づき</a><br>
+            <a href="#3">その他製作物</a>
+
+        </nav>
     </article>
 </body>
