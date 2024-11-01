@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>HTMLとGIT</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="./css/teststyle.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<body>
+    <h1 class="daimei" style="color:white">心を動かすもの</h1>
+    <article>
+        <div class="main">
+            <h2 class="tatenizyusen" id="1">１．概要</h2>
+            <div class="honbun">
+                <ul>
+                    <li class="komidasi" id="title">実際の作品とそのタイトル</li>
+                    <img src="./images/spring-winter/IMG_1006.jpg" width="40%">
+                    <img src="./images/spring-winter/IMG_1007.jpg" width="40%"><br>
+                    <p class="taitoru">タイトル：春冬プレート</p>
+                    <p id="explain">作品の説明：不在か在中かを教えるためのプレート。<br>
+                    春と冬をイメージできるように木の枝部分をプレートにするデザインにした。<br>
+                    またフォントについてもゴシック体といった硬いもの以外にすることによってイメージを柔らかくしている。<br><br>
+
+                    この作品を作った理由：今回の課題は他人もしくは自分の心を動かすような作品を作ろうというコンセプトだったが、<br>
+                    心をどのような方向へ動かすのか、そしてそれは期限的にも製作可能なものなのかといった制約や方向性で難儀した。<br>
+                    そんな中で、私が幼稚園児のころに季節の移り変わりをテーマにした作品があり、<br>
+                    そこから着想を得て今回のプレートを作成した。
+                    </p>
+
+                </ul>
+            </div>
+            <h3 class="tatenizyusen" id="2">２．製作過程</h3>
+            <div class="honbun">
+                <ol>
+                    <li class="komidasi" id="draw">スケッチ</li>
+                    まず頭の中でできているものを書いておく<br>
+                    <img src="./images/spring-winter/IMG_0960.jpg" width="40%"><br><br>
+                    
+
+                    <li class="komidasi">データの製作</li>
+                    今回は2Dの平面の作品となるため、デザインに注力したかった。<br>
+                    そのため、自分が慣れていないため操作難易度が高くデザイン性があげにくいFusion等を避け、<br>
+                    イラストを描くことが専門のclip stadioを使った。<br>
+                    <img src="./images/spring-winter/zentai.png" width="60%"><br>
+                    注意点としてはclip stadioもgravitと同様に「ベクター書き出し」でsvg形式のファイルを作ることはできる。<br>
+                    <img src="./images/spring-winter/kakidasi.png" width="60%"><br>
+                    ただし先にベクター方式のレイヤーで事前に設定していないといけない。<br>
+                    <img src="./images/spring-winter/reiya-.png" width="60%"><br>
+                    また文字の入力に関してはベクター方式では（分かっている範囲では）不可能なのでイラレで後付けする必要がある。<br><br>
+
+                    <li class="komidasi">レーザーカッターでの切り出し</li>
+                    レーザーカッターを使って切り出す。<br>
+                    主な手順はデジファブの説明通り。<br>
+                    <img src="./images/spring-winter/IMG_1009.jpg" width="30%"><br>
+                    切り出すために赤色にした線はすべて切るので穴を作ったりもできる。<br>
+
+                </ol>
+
+            </div>
+            <h4 class="tatenizyusen" id="3">３．春冬プレート以外の案のスケッチ</h4>
+            <div class="honbun">
+                <ul>
+                    <li class="komidasi">歯車を手にくっつける</li>
+                    <img src="./images/spring-winter/IMG_0964.jpg" width="40%"><br>
+                    <img src="./images/spring-winter/IMG_0963.jpg" width="40%"><br>
+                    歯車を手に付けれるようにして指の動きに連動して回転するようにしようとしたもの<br>
+                    体に機械がくっついている、いわばスチームパンク版パワードスーツ（手のみ）を目指そうとした。<br>
+                    しかし歯車が回転する機構はもちろん、歯車を箱のようにする場合は加工の難易度が高くなり、<br>
+                    その上に材料も大量に使ってしまうことや、手の動きの柔軟さも考慮しなければならなかった。<br>
+                    それ以外のもろもろの問題も含めて今回は断念した案。<br>
+                    
+
+
+                </ol>
+            </div>
+            <h5 class="tatenizyusen" id="4">４．製作物を作っている最中に気づいたこと</h5>
+            <div>
+                今回は主にclip stadioを使ってSVGファイルを作った際に気づいたことを挙げていく
+                <ul>
+                    <li>塗りつぶしができない</li>
+                    線の色を変えたり、一部分を同じ色にするおなじみの塗りつぶしはおそらくベクター方式の特徴によって使えなかった<br><br>
+                    <li>ロックが使えない</li>
+                    clip stadioには透明ピクセルをロックといわれる書かれた線のみに変更を加えることができる機能がある<br>
+                    そのため塗りつぶしが効かないところや一部色を変えたいときに使えるが、こちらも使うことができなかった。
+                    <img src="./images/spring-winter/kotei2.png" width="60%"><br><br>
+                    <li>文字は入れることができない</li>
+                    文字を入れる際に文字のレイヤーがベクター方式にできないため、文字を入れることができない<br><br>
+                    <li>線の太さが変わる</li>
+                    clip stadioに限らないがタッチパネル系でイラストを描く際に、力の入れ具合で線の太さがかわる機能がついているソフトがある<br>
+                    そういった機能はアナログで絵を描く感覚で書けるように工夫されたものだがおそらくベクター方式では元の線の太さのみを参照しているらしい<br>
+                    そのため力を入れて線を太くしてもSVGファイルにすると線の太さは変わらない
+                    <img src="./images/spring-winter/henka.png" width="40%">
+                    <img src="./images/spring-winter/henka.svg" width="40%"><br>
+                    左がclip stadioのときのイラストで右がSVG変換後
+                    左では細い千なのに右で濃くなっているのは、先述した通り力の入れ具合による太さではなく、設定時の太さを参照しているため
+                    <br><br>
+                    
+
+
+
+                </ul>
+            </div>
+            <h6 class="tatenizyusen" id="5">５．製作物のファイル</h6>
+            <div>
+                <ul>
+                    <li>春冬プレート</li>
+                    <a href="./files/perfect.svg">svgファイル</a><br>
+                    ※文字の入力は大学のPCで行ったためこのファイルでは文字のみ入っていません。<br>
+                    デザイン自体はそのまま入っているのでご容赦いただければ幸いです。
+
+                </ul>
+            </div>
+        </div>
+        <nav class="mokuzi">
+            <br>
+            目次<br>
+            <a href="#1">概要</a><br>
+            <a href="#2">製作過程</a><br>
+            <a href="#3">別案スケッチ</a><br>
+            <a href="#4">製作時気づき</a><br>
+            <a href="#5">製作物ファイル</a><br><br>
+
+            課題確認用目次<br>
+            <a href="#title">タイトルと写真</a><br>
+            <a href="#draw">スケッチ<br>+ソフトの機能</a><br>
+            <a href="#5">svgファイル</a><br>
+            <a href="#explain">説明と製作理由</a><br>
+            <a href="#4">気づき</a><br>
+            <a href="#3">その他製作物</a>
+
+        </nav>
+    </article>
+</body>
