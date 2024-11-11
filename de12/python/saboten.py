@@ -8,7 +8,6 @@ sinkoukando=0#エンディングにかかわるサボテンの真好感度
 print("あなたはふとした時に観葉植物が欲しくなりました。")
 print("ガーデンに来たあなた。どの植物を買いますか？")
 
-
 for i in range(1,11):
     sentaku1=int(input("数字を入力してください。１：踊っているサボテン　２：地味なサボテン　３：花の付いたサボテン\n"))
     if sentaku1==1:
@@ -33,11 +32,15 @@ else:
     print("一日目")
     print("踊っているサボテンを購入したあなた。あなたはサボテンに何をしますか？")
 
-
-
-
-
 for z in range(2,7):
+    if koukando>=80:
+        print("サボテンは尋常じゃないほど踊っている")
+    elif koukando>=40 and koukando<=79:
+        print("サボテンはくねくね動いている")
+    elif koukando>=0 and koukando<=39:
+        print("サボテンは止まったまま動かない")
+    elif koukando<=-1:
+        print("サボテンは枯れかけている")
     sentaku2=int(input("数字を入力してください。１：水をやる　２：日光に当てる　３：振り回す　４：愛をささやく　５：歌いかける\n"))
     if sentaku2==1:
         koukando+=10
@@ -47,7 +50,6 @@ for z in range(2,7):
             sys.exit()
         else:
             print("サボテンがみずみずしくなりながら踊ってるよ。かわいいね\n")
-            
             sinkoukando+=0
     elif sentaku2==2:
         koukando+=random.randint(10,30)
@@ -57,7 +59,6 @@ for z in range(2,7):
             sys.exit()
         else:
             print("サボテンがテカっているよ。かわいいね\n")
-
             sinkoukando+=1
     elif sentaku2==3:
         koukando-=random.randint(30,70)
@@ -67,7 +68,6 @@ for z in range(2,7):
             sys.exit()
         else:
             print("さぼてんが振り回されてるよ。かわいそうだね\n")
-            
             sinkoukando-=2
     if sentaku2==4:
         koukando+=random.randint(20,60)
@@ -77,7 +77,6 @@ for z in range(2,7):
             sys.exit()
         else:
             print("サボテンが照れてるよ。かわいいね")
-            
             sinkoukando+=3
     if sentaku2==5:
         koukando+=random.randint(-10,40)
@@ -87,7 +86,6 @@ for z in range(2,7):
             sys.exit()
         else:
             print("サボテンがリズムに乗ってるよ。かわいいね")
-            
             sinkoukando+=2
     print(z,"日目")
     print("今日のお世話の時間です")
