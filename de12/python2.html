@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>Python2</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="./css/teststyle.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<body>
+    <h1 class="daimei" style="color:white">音楽自動文字起こし翻訳
+    </h1>
+    <article>
+        <div class="main">
+            <h2 class="tatenizyusen" id="1">説明:できなかった・わからなかった部分</h2>
+            <div class="honbun">
+            音楽の音声ファイルから自動で文字起こしを行い翻訳してくれるプログラムを作ろうとした。<br>
+            ただ音声ファイルからvoskと呼ばれる言語認識をして文字起こしをするものを使わせていただいたため、<br>
+            音楽の中から言葉を抽出することになる。<br>
+            そのためおそらく間違いが出やすくなってしまうと考えられる。（コードを実行しきれなかったため推測）<br>
+            また、そもそも参考にさせていただいたサイトから引っ張ってきたコード(chatGPTによるソースコード)はあるが、<br>
+            どのコードが音声ファイルを置くフォルダが指定しているのかがわからず、<br>
+            voskの日本語訳にするためのデータファイルもフォルダを作っておいては見たが、エラーを吐いてしまった。<br>
+            それ以外にもvoskから引っ張ってきた関数なのか、pythonに元からある関数なのかがわからなかったり、<br>
+            たとえ分かったとしてもvoskから引っ張ってきたものの場合、<br>
+            使い方がネットで調べてもどこに書いてあるかがわからないため<br>
+            細かい変更を行うことができなかった。<br>
+            ダメ押しで言うとコードの意味の理解が進んでいなかったためエラーの意味すら分からない時もあった<br>
+            </div>
+            <h3 class="tatenizyusen" id="2">ソースコード</h3>
+            <div class="honbun">
+                ここからは自分が参考にさせていただいたコードで調べて分かった部分（これも途中までだが）を載せていく
+                <pre><code>
+                    import googletrans #翻訳
+                    import vosk        #音声起こし部分
+                    import wave        #おそらくwaveファイルを扱うためのモジュール　pythonに元から存在するやつ
+                    from vosk import Model,KaldiRecognizer  
+
+                    #mp4形式の動画から音声を抽出して文字起こしをしたかったが、時間的にも技術的にもきついので断念
+                    #voskはwavを使うためwav方式の音声ファイルを認識して文字起こしをできるようにしていきたい
+                    #voskに関するコマンドなのかpythonに元からあるコマンドなのかの判断が難しい
+                    #おそらくmodelはpythonのものでフィールド？を作る？っぽい
+                    #kaldirecognizerがおそらく音声認識部分っぽい
+                    #作らなければならないのは選択するファイル・フォルダの設定　文字起こしの設定　翻訳の設定
+
+                    #参考にしたwebでできる限り理解しながら書いていく
+
+                    def moziokosi(wave_file,model_path,textfile):#文字起こし部分
+                        model=Model(model_path)#なにこれ
+                        wf=wave.open(wave_file,"rb")
+                        #waveファイルの読み込みを行っている　ここでのwave_fileは開くファイルのこと　rbがwbになると書き出しを行うっポイ
+                        rec=KaldiRecognizer(model,wf.getframerate)
+                        #voskのモジュール？クラス？のやつでおそらくここで音の解析を行うっポイ
+                        #getframerateはwaveの付属オブジェクト　サンプリングレートを返す
+
+                        #ここで変数の宣言をしているんだと思われる
+
+
+                        with open(textfile,'w',encoding='utf-8') as A:#pythonのopen関数でファイルに対して書き込み、読み込みができる
+                            while True:
+                                date =wf.readframes(400000)
+                                #オーディオフレーム（ここでは400000フレーム読み込む）を読み込んでbytesオブジェクトにする waveの付属オブジェクト
+                                if len(date)==0:#dateの中の変数の長さが０ならば
+                                    break
+                                if rec.AcceptWaveform(date):
+                                    result =rec.Result()
+                                    A.write(result+'\n')
+                                A.write(rec.FinalResult()+'\n')
+                            
+                        wf.close
+
+
+                </code></pre>
+                特に序盤のmodelがまずvoskのものなのかpythonのものなのか、何を定義しているのかがわからず躓いてしまった。
+            </div>
+            <h4 class="tatenizyusen" id="3">chatGPTによるソースコード</h4>
+            <div class="honbun">
+                以下はdeepl（翻訳）のAPIを使ってchatGPTに頼んで書いてもらったソースコードである
+                <pre><code>
+                    from vosk import Model, KaldiRecognizer
+                    import wave
+                    import json
+                    import requests
+
+                    def transcribe_audio(audio_file):
+                        # Voskモデルのロード
+                        model = Model("model")  # "model" フォルダにVoskの言語モデルを配置してください
+                        recognizer = KaldiRecognizer(model, 16000)
+                        
+                        # WAVファイルの読み込み
+                        with wave.open(audio_file, "rb") as wf:
+                            if wf.getnchannels() != 1 or wf.getsampwidth() != 2 or wf.getframerate() != 16000:
+                                raise ValueError("音声ファイルは16kHz、モノラル、16ビット形式である必要があります。")
+                            
+                            recognizer_text = ""
+                            while True:
+                                data = wf.readframes(4000)
+                                if len(data) == 0:
+                                    break
+                                if recognizer.AcceptWaveform(data):
+                                    result = json.loads(recognizer.Result())
+                                    recognizer_text += result.get("text", "") + " "
+                            
+                            # 最後の部分を取得
+                            final_result = json.loads(recognizer.FinalResult())
+                            recognizer_text += final_result.get("text", "")
+                            
+                        return recognizer_text
+
+                    def translate_text(text, target_language, api_key):
+                        url = "https://api-free.deepl.com/v2/translate"
+                        headers = {"Authorization": f"DeepL-Auth-Key {api_key}"}
+                        data = {"text": text, "target_lang": target_language}
+                        
+                        response = requests.post(url, headers=headers, data=data)
+                        if response.status_code == 200:
+                            translated_text = response.json()["translations"][0]["text"]
+                            return translated_text
+                        else:
+                            raise Exception(f"DeepL APIエラー: {response.status_code} - {response.text}")
+
+                    # メイン処理
+                    def main(audio_file, target_language, api_key):
+                        try:
+                            print("音声ファイルを文字起こし中...")
+                            transcribed_text = transcribe_audio(audio_file)
+                            print("文字起こし結果:", transcribed_text)
+                            
+                            print("翻訳中...")
+                            translated_text = translate_text(transcribed_text, target_language, api_key)
+                            print("翻訳結果:", translated_text)
+                        except Exception as e:
+                            print("エラー:", e)
+
+                    # 実行例
+                    if __name__ == "__main__":
+                        AUDIO_FILE = "path/to/audio.wav"  # 音声ファイルのパスを指定
+                        TARGET_LANGUAGE = "EN"  # 翻訳先言語（例: 英語は "EN"）
+                        API_KEY = "your_deepl_api_key"  # DeepL APIキーを入力
+                        
+                        main(AUDIO_FILE, TARGET_LANGUAGE, API_KEY)
+
+                </code></pre>
+
+            </div>
+            <h5 class="tatenizyusen" id="4">外部参考リンク</h5>
+            <div>
+                <a href="https://b9technologist.com/vosk_transcription/">Voskでmp4動画から文字起こし</a>
+            </div>
+            <h6 class="tatenizyusen" id="5">グループで完成させていた方</h6>
+            <div>
+                <a href="https://saki0327.github.io/xbp/de12/4.html">saki　さんのコード</a><br>
+                
+            </div>
+
+            
+            
+        </div>
+        <nav class="mokuzi">
+            <br>
+            目次<br>
+            <a href="#1">説明:できなかった・わからなかった部分</a><br><br>
+            <a href="#2">ソースコード</a><br><br>
+            <a href="#3">chatGPTによるソースコード</a><br><br>
+            <a href="#4">外部参考リンク</a><br><br>
+            <a href="#5">グループで完成させていた方</a>
+            
+        </nav>
+    </article>
+</body>
