@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title></title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="./css/teststyle.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<body>
+    
+    <h1 class="daimei" style="color:white">共起ネットワーク</h1>
+    <article>
+        <div class="main">
+            <h2 class="tatenizyusen" id="1">１．単語頻出</h2>
+            <div class="honbun">
+                2024年<br>
+                <img src="./xbp_text_mining-main (3)/xbp_text_mining-main/2024file/2024t.png" width="40%"><br>
+                1970年<br>
+                <img src="./xbp_text_mining-main (3)/1970file/1970t.png" width="40%"><br>
+                考察<br>
+                1970年と2024年の両方とも海外とのつながりや、工事の計画、展示についてなど大まかな部分では似通っているが、<br>
+                2024年では、「予算」と「費」という言葉が出てきているので、費用について述べられている部分が多く、<br>
+                1970年では、2024年よりも「ヵ国」や「参加」、「関係」といった言葉が出てきている。<br>
+                そのため2024年では予算や計画について、1970年では海外との関係について重要視されていたのではと考えられる。
+            </div>
+            <h3 class="tatenizyusen" id="2">２．共起ネットワーク</h2>
+            <div class="honbun">
+                2024年<br>
+                <img src="./xbp_text_mining-main (3)/xbp_text_mining-main/2024file/2024k.png" width="40%"><br>
+                1970年<br>
+                <img src="./xbp_text_mining-main (3)/1970file/1970k.png" width="40%"><br>
+                考察<br>
+                2024年では市や群といった言葉と祭りや委員といった言葉がつながっているので、地域の動きに視点が言っていると考えられる。<br>
+                1970年では頻出単語と同じようにヵ国といった言葉が政府や国とつながっているため海外とのかかわりに視点が言っていると考えられる。<br>
+                また右下に労働や求人に関係する単語でネットワークができているため人材確保についての記述も多かったと考えられる。
+            </div>
+            <h4 class="tatenizyusen" id="3">３．サンバースト</h2>
+            <div class="honbun">
+                2024年<br>
+                <img src="./xbp_text_mining-main (3)/xbp_text_mining-main/2024file/2024.png" width="40%"><br>
+                1970年<br>
+                <img src="./xbp_text_mining-main (3)/1970file/1970.png" width="40%"><br>
+                考察<br>
+                2024年ではやはり建設や出展についての項目と、開催についての地域や委員の関わりがおおきなくくりになっている。<br>
+                1970年では外国と政府についての項目と、閣議と迎賓館といった項目でくくりとなっている。<br>
+                閣議と迎賓館についてはおそらく天皇に関すること？なのかも<br>
+
+            </div>
+            <div class="maruumewaku" id="sansyou">
+                html<br>
+                頻出単語→<a href="./xbp_text_mining-main (3)/xbp_text_mining-main/2024file/2024-11-25_単語頻出.html">2024</a><br>
+                　　　　　<a href="./xbp_text_mining-main (3)/1970file/2024-11-25_単語頻出.html">1970</a><br>
+                共起ネットワーク→<a href="./xbp_text_mining-main (3)/xbp_text_mining-main/2024file/2024-11-25_共起ネットワーク.html">2024</a><br>
+                　　　　　　　　　<a href="./xbp_text_mining-main (3)/1970file/2024-11-25_共起ネットワーク.html">1970</a><br>
+                サンバースト→<a href="./xbp_text_mining-main (3)/xbp_text_mining-main/2024file/2024-11-25_サンバースト.html">2024</a><br>
+                　　　　　　　<a href="./xbp_text_mining-main (3)/1970file/2024-11-25_サンバースト.html">1970</a><br>
+                1970　文字→<a href="./xbp_text_mining-main (3)/1970.txt">1970　文字　約15000文字</a><br>
+                2024　文字→<a href="./xbp_text_mining-main (3)/2024.txt">2024　文字　約19000文字</a><br>
+            </div>
+        </div>
+        <nav class="mokuzi">
+            <br>
+            目次<br>
+            <a href="#1">頻出単語</a><br>
+            <a href="#2">共起ネットワーク</a><br>
+            <a href="#3">サンバースト</a><br>
+            <a href="#sansyou">html集</a><br>
+            
+        </nav>
+    </article>
+</body>
+</html>
