@@ -108,7 +108,7 @@
                 <a href="https://www.i-deak.jp/case-study/worm-selflock-2/" target="_blank">【機構設計】減速機構 －平歯とウォーム</a><br>                                
                 <a href="https://www.i-deak.jp/case-study/planetary-gear-2/" target="_blank">【機構設計】減速機構 －遊星歯車</a><br>
                 <a href="https://youtu.be/JLUo5uMjfH0?si=Q9KtVis6LGEhWcKd" target="_blank">【見よう見まねで学ぶ】Fusion360で傘歯車を設計しよう！</a><br><br>  
-                
+                <a href="https://qiita.com/hextomino/items/e1a8fce46f31f8935aca" target="_blank">ArduinoでTapeLEDを制御する</a><br>
                 電子機器類<br>
                 elegoo-unoR3・
                 tb6612モータードライバー・
@@ -119,13 +119,52 @@
 
                 
             </div>
+            <h2 class="tatenizyusen" id="5">５．各種電子機器材料の使い方</h2>
+            <div class="honbun">
+                tb6612モータードライバーについて<br>
+                おそらくネット記事の情報量が１・２番目に多いドライバー<br>
+                二つのDCモーターを一つの本製品で制御することが可能<br><br>
+                <img src="./images/TB6612setumei.jpg" width="40%"><br>
+                基本右側がマイコンとつなぎ、左側がモーターや電源とつなぐ<br>
+                赤色の部分がマイコン側で電源にかかわる部分⇒V＝Vcc　：マイコンの電源とつなぐ（3.3Vとかとつなぐ）<br>
+                　　　　　　　　　　　　　　　　　　　　　　G＝GND　：マイコンのGNDとつなぐ<br>
+                紫色の部分がモーターを制御するための部分　⇒P＝PWM　：PWM制御ができるとこ（~がついている数字）とつなぐ<br>
+                　　　　　　　　　　　　　　　　　　　　　　１・２　：適当にデジタルの数字の中から選ぶ<br>
+                　　　　　　　　　　　　　　　　　　　　　　STBY　　：スタンバイモードを設定するためのとこ、適当につなぐ<br>
+                青色の部分はモーターの電源にかかわる部分　⇒VM　　　：モーターの電源の＋をつなぐ部分<br>
+                　　　　　　　　　　　　　　　　　　　　　　PG＝PGND：モーターの電源の－をつなぐ部分<br>
+                黒色の部分はモーターのコードをさす部分　　⇒１・２　：適当にモーターのコードをさす、どっちでもよいが回転方向に注意<br>
+                <br>
+             <a href="https://toshiba.semicon-storage.com/jp/semiconductor/product/motor-driver-ics/brushed-dc-motor-driver-ics/detail.TB6612FNG.html" target="_blank">東芝データシート閲覧できるとこ</a><br>
+                注意事項ー・絶対に絶対最大定格は超えないようにする。超えた瞬間壊れると思っていい。（どのサイトでも言ってるが）<br>
+                　　　　　・モーター側の電源の電圧とモータードライバー側での許容最小（最大）電源電圧は確認する。<Br>
+                　　　　　・モーターが1.5V推奨なのに、モータードライバー側の許容最小電源電圧が2.5Vとかだと<br>
+                　　　　　　モーター側に無理をさせる2.5Vの電圧で回すことになる（推奨なら多少は問題ないけど）<br>
+                　　　　　　ちなみに私は推奨1.5Vなのに3Vでモーターを回している<br>
+                　　　　　・スタンバイモードはしっかり使うこと、使わないとなんやかんやで電源が発熱しまくって電池入れを溶かす<br>
+                　　　　　　サイト（あとこの画像）によってはマイコンの3.3V（要は電源）につないでいるが、<br>
+                　　　　　　電源発熱問題が出ているグループがあるため、原因がSTBYとは決まってはいないが避けた方がよさそう。<br><br><br>
+
+                ws2812Bについて<br>
+                今回私は細かな設定は行っていないので細かいことはかけない<br>
+                が下記のサイトが非常にわかりやすいので困ったら見ることをお勧めする。<br>
+                色の種類に関してはサイトで確認することができる<br>
+                <a href="https://fromkato.com/color" target="_blank">色見本ーカラーコード</a><br>
+                <a href="https://qiita.com/hextomino/items/e1a8fce46f31f8935aca" target="_blank">ArduinoでTapeLEDを制御する</a><br>
+
+                
+
+                
+            </div>
         </div>
         <nav class="mokuzi">
             <br>
             目次<br>
-            <a href="#1">アイデアのスケッチ</a><br>
-            <a href="#2">概要</a><br>
-            <a href="#3">プロセスメモ</a><br>
+            <a href="#1">スケッチ</a><br><Br>
+            <a href="#2">概要</a><br><br>
+            <a href="#3">プロセスメモ</a><br><br>
+            <a href="#4">参考サイト</a><br><br>
+            <a href="#5">電子機器活用法</a><br><br>
 
         </nav>
     </article>
